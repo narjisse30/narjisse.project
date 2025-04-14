@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Connexion étudiant</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Créer un compte</h1>
+                
+                <span>ou utilisez votre adresse e-mail pour inscription</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>S'inscrire</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>se connecter </h1>
+                <span> ou utilisez votre Mot de passe de messagerie </span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Mot de passe oublié ?</a>
+                <button>Se connecter</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bienvenue!</h1>
+                    <p>saisissez vos informations personnelles pour utiliser l'application </p>
+                    <button class="hidden" id="login">Connexion</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Bonjour,Etudient!</h1>
+                    <p>Inscrivez-vous avec vos informations personnelles</p>
+                    <button class="hidden" id="register">Inscription</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
