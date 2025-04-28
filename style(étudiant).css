@@ -16,6 +16,38 @@ body{
     flex-direction: column;
     height: 100vh;
 }
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #512da8;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 10;
+}
+
+/* Logo lien */
+.logo-block {
+    display: block;
+    width: 100%;
+    background-color: #512da8;
+    color: white;
+    text-align: center;
+    padding: 2px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    border-radius: 0 0 20px 20px;
+    transition: background-color 0.3s;
+}
+
+.logo-block:hover {
+    background-color: #6747c7;
+}
+
 
 .container{
     background-color: #fff;

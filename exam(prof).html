@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ExamOnline - Création d'Examen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exam(prof).css">
+  <link rel="icon" href="img/logo.app.png" type="image/x-icon">
+  <script defer src="exam(prof).js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+      </div>
+
+      <div class="header-main">
+        <h1>📝 Création d'Examen</h1>
+      </div>
+    </header>
+    <main>
+      <form id="exam-form">
+        <div class="question-section">
+          <h2>Ajouter une Question</h2>
+
+          <label for="question">Question :</label>
+          <textarea id="question" placeholder="Entrez votre question..." required></textarea>
+
+          <label for="answer1">Réponse 1 :</label>
+          <input type="text" id="answer1" placeholder="Réponse 1" required>
+
+          <label for="answer2">Réponse 2 :</label>
+          <input type="text" id="answer2" placeholder="Réponse 2" required>
+
+          <label for="answer3">Réponse 3 :</label>
+          <input type="text" id="answer3" placeholder="Réponse 3" required>
+
+          <label for="answer4">Réponse 4 :</label>
+          <input type="text" id="answer4" placeholder="Réponse 4" required>
+
+          <label for="correct-answer">Bonne réponse :</label>
+          <select id="correct-answer" required>
+            <option value="">-- Choisir --</option>
+            <option value="1">Réponse 1</option>
+            <option value="2">Réponse 2</option>
+            <option value="3">Réponse 3</option>
+            <option value="4">Réponse 4</option>
+          </select>
+
+          <button type="button" id="add-question" class="btn-primary">Ajouter la Question</button>
+        </div>
+
+        <div class="time-section">
+          <h2>Durée de l'Examen</h2>
+          <label for="exam-duration">Durée (en minutes) :</label>
+          <input type="number" id="exam-duration" placeholder="Ex : 60" required>
+
+          <button type="submit" id="start-exam" class="btn-start">Démarrer l'Examen</button>
+        </div>
+      </form>
+
+      <div id="exam-countdown" class="hidden">
+        <h3>⏳ Temps restant : <span id="countdown"></span></h3>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

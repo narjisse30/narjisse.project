@@ -7,14 +7,44 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+body {
     background-color: #c9d6ff;
     background: linear-gradient(to right, #ad79f0, #a88beb);
     display: flex;
+    flex-direction: column; /* colonne pour empiler */
+    align-items: center;
+    min-height: 100vh; /* min-height au lieu de height */
+    /* PAS justify-content: center sinon tout est au milieu */
+}
+
+/* Wrapper pour mieux contrôler le bloc */
+.logo-wrapper {
+    width: 150%;
+    background-color: #512da8;
+    border-bottom: 2px solid white;
+    border-radius: 50px 50px 50px 50px;
+    overflow: hidden;
+    height: 100px; /* <<< AJOUTE une hauteur fixe ici */
+}
+
+
+/* Logo lien */
+.logo-block {
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: 100vh;
+    width: 100%;
+    height: 80px;
+    background-color: #512da8;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.logo-block:hover {
+    background-color: #6747c7;
 }
 
 .container{

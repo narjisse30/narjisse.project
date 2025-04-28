@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/logo.app.png" type="image/x-icon">
+  <title>Déconnexion - ExamOnline</title>
+
+  <!-- FontAwesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* --- CSS intégré --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Page de déconnexion */
+    .logout-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .logout-message {
+      font-size: 2rem;
+      color: #4f46e5;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-home {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 9999px;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn-home:hover {
+      background: #3730a3;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      background: #4f46e5;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Page Déconnexion -->
+  <main class="logout-container">
+    <h1 class="logout-message">Vous avez été déconnecté avec succès !</h1>
+    <a href="index.html" class="btn-home"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 ExamOnline - Tous droits réservés.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Message de confirmation dans la console
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Utilisateur déconnecté.');
+    });
+  </script>
+
+</body>
+</html>

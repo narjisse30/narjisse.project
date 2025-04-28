@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progression - Application</title>
+  <link rel="icon" href="img/logo.app.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Ajout de Chart.js -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 700px;
+      width: 90%;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .progress-bar {
+      background: #e0e0e0;
+      border-radius: 30px;
+      overflow: hidden;
+      height: 25px;
+      margin-bottom: 20px;
+    }
+    .progress-fill {
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      height: 100%;
+      width: 0;
+      transition: width 1s ease-in-out;
+    }
+    .stats {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .btn-home {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #4facfe;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-home:hover {
+      background: #00c6ff;
+    }
+    canvas {
+      margin-top: 30px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>progression de l'application</h1>
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <p id="progressText">Chargement...</p>
+
+  <!-- Statistiques supplémentaires -->
+  <div class="stats">
+    <p><strong>Examens réalisés :</strong> <span id="examsDone">0</span></p>
+    <p><strong>Note moyenne :</strong> <span id="averageScore">0%</span></p>
+    <p><strong>Taux de réussite :</strong> <span id="successRate">0%</span></p>
+  </div>
+
+  <!-- Graphique d'évolution -->
+  <canvas id="progressChart"></canvas>
+
+  <a href="index.html" class="btn-home">Retour à l'accueil</a>
+</div>
+
+<script>
+  let progress = 0;
+  const progressFill = document.getElementById('progressFill');
+  const progressText = document.getElementById('progressText');
+  const examsDone = document.getElementById('examsDone');
+  const averageScore = document.getElementById('averageScore');
+  const successRate = document.getElementById('successRate');
+
+  const fakeExamScores = [60, 75, 80, 90, 95]; // Simuler les scores obtenus
+
+  function updateProgress() {
+    if (progress < 100) {
+      progress += 10;
+      progressFill.style.width = progress + '%';
+      progressText.textContent = 'Progression : ' + progress + '%';
+    } else {
+      progressText.textContent = 'Progression terminée ! 🎉';
+      clearInterval(intervalId);
+
+      // Remplir les stats quand progression terminée
+      examsDone.textContent = fakeExamScores.length;
+      const avg = Math.round(fakeExamScores.reduce((a, b) => a + b) / fakeExamScores.length);
+      averageScore.textContent = avg + '%';
+      successRate.textContent = (avg >= 50 ? '✅ Réussi' : '❌ Échec');
+    }
+  }
+
+  const intervalId = setInterval(updateProgress, 300);
+
+  // Graphique avec Chart.js
+  const ctx = document.getElementById('progressChart').getContext('2d');
+  const progressChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Examen 1', 'Examen 2', 'Examen 3', 'Examen 4', 'Examen 5'],
+      datasets: [{
+        label: 'Scores (%)',
+        data: fakeExamScores,
+        backgroundColor: 'rgba(79, 172, 254, 0.2)',
+        borderColor: '#4facfe',
+        borderWidth: 2,
+        pointBackgroundColor: '#00f2fe',
+        tension: 0.3,
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

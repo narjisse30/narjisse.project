@@ -1,16 +1,11 @@
-// Code d'accès à vérifier (à sécuriser côté serveur en prod !)
-const correctAccessCode = "prof123"; // <-- à personnaliser !
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
 
-document.querySelector(".sign-in form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Empêche l'envoi du formulaire
+registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
 
-    const codeInput = document.getElementById("accessCode").value;
-
-    if (codeInput === correctAccessCode) {
-        alert("Accès autorisé. Bienvenue, Professeur !");
-        // Redirection ou accès à l'application ici :
-        // window.location.href = "app.html";
-    } else {
-        alert("Code d'accès incorrect. Veuillez contacter l'administrateur.");
-    }
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
 });

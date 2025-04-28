@@ -1,0 +1,118 @@
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Corps de la page */
+body {
+    background: linear-gradient(to right, #a88beb, #f2c4fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #512da8;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 10;
+}
+
+/* Logo lien */
+.logo-block {
+    display: block;
+    width: 100%;
+    background-color: #512da8;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    border-radius: 0 0 20px 20px;
+    transition: background-color 0.3s;
+}
+
+.logo-block:hover {
+    background-color: #6747c7;
+}
+
+
+/* Conteneur principal */
+.main-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 800px;
+    width: 100%;
+    margin-top: 80px; /* Pour ne pas être caché sous la navbar */
+}
+
+.main-container h1 {
+    margin-bottom: 10px;
+}
+
+.main-container p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Sélection des utilisateurs */
+.user-selection {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Cartes utilisateurs */
+.user-card {
+    background-color: #f5f5f5;
+    padding: 20px 30px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+}
+
+.user-card h2 {
+    margin-bottom: 10px;
+    color: #512da8;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #512da8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #6747c7;
+}
