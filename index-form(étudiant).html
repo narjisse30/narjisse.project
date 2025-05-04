@@ -1,61 +1,80 @@
+<!-- inchangé : début HTML -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style(étudiant).css">
-    <link rel="icon" href="img/logo.app.png" type="image/x-icon">
-    <title>Connexion étudiant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style(étudiant).css">
+  <link rel="icon" href="img/logo.app.png" type="image/x-icon">
+  <title>Connexion étudiant</title>
 </head>
+<body class="fade-in">
+  <nav class="navbar">
+    <a href="index.html" class="logo-block">🏠 Accueil</a>
+  </nav>
 
-<body>
-    <nav class="navbar">
-        <a href="index.html" class="logo-block">🏠 Accueil</a>
-    </nav>
+  <div class="container" id="container">
+    <div class="form-container sign-up">
+      <form id="register-form">
+        <h1>Créer un compte</h1>
+        <span>ou utilisez votre adresse e-mail pour inscription</span>
 
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Créer un compte</h1>
-                
-                <span>ou utilisez votre adresse e-mail pour inscription</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>S'inscrire</button>
-            </form>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Nom complet" required>
         </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>se connecter </h1>
-                <span> ou utilisez votre Mot de passe de messagerie </span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Mot de passe oublié ?</a>
-                <button>Se connecter</button>
-            </form>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required>
         </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Bienvenue!</h1>
-                    <p>saisissez vos informations personnelles pour utiliser l'application </p>
-                    <button class="hidden" id="login">Connexion</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Bonjour,Etudient!</h1>
-                    <p>Inscrivez-vous avec vos informations personnelles</p>
-                    <button class="hidden" id="register">Inscription</button>
-                </div>
-            </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Mot de passe" id="password" required>
         </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Confirmer le mot de passe" id="confirm-password" required>
+        </div>
+        <div id="password-strength"></div>
+        <p class="rgpd-text">En vous inscrivant, vous acceptez notre politique de confidentialité.</p>
+        <button type="submit">S'inscrire</button>
+      </form>
     </div>
 
-    <script src="script.js"></script>
+    <div class="form-container sign-in">
+      <form>
+        <h1>Se connecter</h1>
+        <span>Ou utilisez votre mot de passe de messagerie</span>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Mot de passe" required>
+        </div>
+        <a href="#">Mot de passe oublié ?</a>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Bienvenue!</h1>
+          <p>Saisissez vos informations personnelles pour utiliser l'application</p>
+          <button class="hidden" id="login">Connexion</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Bonjour, Étudiant!</h1>
+          <p>Inscrivez-vous avec vos informations personnelles</p>
+          <button class="hidden" id="register">Inscription</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
-
-
